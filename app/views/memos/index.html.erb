@@ -6,7 +6,14 @@
     <% @memos.each do|memo| %>
     <div class = "col-sm-4">
     <div class="panel panel-warning">
-      <div class="panel-heading"><%= memo.title%></div>
+      <div class="panel-heading">
+        <h4><%= memo.title%></h4>
+        <p>Category No set</p>
+        <div class = "buttons">
+        <a href="/memos/<%=memo.id%>"data-method="delete"><span class= "glyphicon glyphicon-trash"></span></a>
+        <a href="/memos/<%=memo.id%>/edit"><span class= "glyphicon glyphicon-edit"></span></a>
+      </div>
+      </div>
       <div class="panel-body">
         <%= memo.body%>
       </div>
