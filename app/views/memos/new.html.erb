@@ -2,13 +2,17 @@
     <h2>NEW MEMO CREATE</h2>
     
     <%= form_tag("/create") do %>
-        <div class="form-group">
-            <%= label_tag "form-title", "title" %>
-            <%= text_field :memos,:title, id:"form-title", class:"form-control",placeholder: "title"%>
-        </div>
-        <div class="form-group">
-            <%= label_tag "form-content", "content" %>
-            <%= text_field :memos,:body, id:"form-content", class:"form-control",placeholder: "content" %>
-        </div>
+            <div class="form-group">
+                <%= label_tag "form-title", "title" %>
+                <%= text_field :memos,:title, id:"form-title", class:"form-control",placeholder: "title"%>
+            </div>
+            <div class="form-group">
+                <%= label_tag "form-content", "content" %>
+                <%= text_field :memos,:body, id:"form-content", class:"form-control",placeholder: "content" %>
+            </div>
+           <div class="form-group">
+               <%= label_tag "form-category", "category" %>
+               <%= select_tag 'memos[category_id]', options_from_collection_for_select(@categories, :id, :name),id:"form-category",class:"form-control"%>
+        　</div>
         <%= submit_tag "add!" ,class:"btn btn-warning"%>
     <% end %>

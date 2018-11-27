@@ -1,9 +1,6 @@
+<h3><%=@category.name%>'s Memo</h3>
 
-    <h2>Memo List</h2>
-    
-    <!--<a href="/new" class ="btn btn-primary">新規メモ作成</a>-->
-    
-    <% @memos.each do|memo| %>
+ <%@memos.each do|memo| %>
     <div class = "col-sm-4">
       <div class="panel panel-warning">
         <div class="panel-heading">
@@ -20,6 +17,3 @@
       </div>
     </div>
     <% end %>
-
-
-
